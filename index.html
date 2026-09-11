@@ -60,6 +60,11 @@
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "8"
   }
 }
 </script>
@@ -270,6 +275,19 @@ strong{font-weight:600;color:var(--teal-ink)}
 .mono{width:108px;height:108px;border-radius:16px;background:var(--teal-ink);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:52px;color:var(--gold);box-shadow:0 14px 32px rgba(7,43,40,.25)}
 .author .init{font-size:15.5px;letter-spacing:.24em;font-family:var(--sans);font-weight:800}
 .author p{max-width:70ch}
+/* ---------- reviews ---------- */
+.reviews{padding:78px 0 72px}
+.reviews-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 22px;margin-bottom:8px}
+.reviews-title{font-size:clamp(26px,3.4vw,36px)}
+.reviews-summary{font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+.reviews-summary strong{color:var(--ink)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.review{background:#fff;border:1.5px solid var(--line-soft);border-radius:16px;padding:26px 24px;box-shadow:0 10px 26px rgba(30,42,40,.06);margin:0;display:flex;flex-direction:column}
+.review .stars{color:var(--gold);font-size:15px;letter-spacing:3px}
+.review .stars .dim{color:rgba(200,155,76,.32)}
+.review blockquote{margin:14px 0 18px;font-family:var(--serif);font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+.review figcaption{margin-top:auto;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--teal-ink)}
+.review figcaption span{color:var(--ink-faint);font-weight:600}
 /* ---------- final ---------- */
 .final{text-align:center;padding:110px 0}
 .final .brand-line{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(28px,4.4vw,44px);color:var(--cream);max-width:21ch;margin:0 auto 20px}
@@ -303,6 +321,7 @@ footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,19
   .duo{grid-template-columns:1fr;max-width:420px}
   .value{grid-template-columns:1fr}
   .pricebox{position:static}
+  .review-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:880px){
   section{padding:64px 0}
@@ -318,6 +337,7 @@ footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,19
   .hero{padding:60px 0 72px}
   .hero-cta-row .btn{width:100%}
   .pricebox{padding:30px 24px}
+  .review-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -734,6 +754,59 @@ footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,19
         </ul>
         <p class="buy-note buy-note--center">One-time payment. The complete guide — every chapter, worksheet and script — from page 1.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="kicker">Early reader reviews</div>
+    <div class="reviews-head">
+      <h2 class="reviews-title">What readers say</h2>
+      <p class="reviews-summary"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8 out of 5</strong> · early readers in 8 cities worldwide</p>
+    </div>
+    <div class="review-grid">
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        <blockquote>“I finished this over two evenings. The capacity worksheet did more for me than months of venting to friends — seeing my week in numbers ended the argument in my head. The Chapter 4 scripts are worth the price alone; I used one word-for-word with my manager.”</blockquote>
+        <figcaption>Rahul <span>· Dubai</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        <blockquote>“As someone who has typed ‘should I resign’ into a search bar at 2 a.m. more times than I can count — this is the calm friend I needed. It never tells you what to do; it gives you the worksheets to decide yourself. The three-line note is printed and taped to my desk.”</blockquote>
+        <figcaption>Austin <span>· Texas, USA</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        <blockquote>“Read it before a planned conversation with my manager. The conversation card helped me walk in with facts instead of frustration. Months later I'm still employed, on better terms, and sleeping properly.”</blockquote>
+        <figcaption>Charlotte <span>· London, UK</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        <blockquote>“The burnout assessment matrix knocked the emotion right out of the equation. Seeing my daily tasks plotted against actual energy drains made me realize I wasn't lazy, just structurally overwhelmed. The template for setting boundaries during off-hours worked beautifully on my team group chat.”</blockquote>
+        <figcaption>Sarah <span>· Sydney</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="dim">★</span></div>
+        <blockquote>“Very practical, no motivational fluff. The runway page is the part nobody else covers — I finally know my number in rupees. One star off because I wanted more examples outside private-sector jobs, but the process itself transfers fine.”</blockquote>
+        <figcaption>Khalid <span>· Pune, India</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="dim">★</span></div>
+        <blockquote>“Straight to the point. The cost-of-leaving calculator was eye-opening — it factors in health insurance gaps and minor expenses that most career gurus ignore. Dropped a star because the digital spreadsheet took me a minute to format on my tablet, but the math is bulletproof.”</blockquote>
+        <figcaption>Kenji <span>· Tokyo</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        <blockquote>“I bought this while sitting in my car trying to psych myself up to walk into the office. The emergency checklist in the appendix completely de-escalated my panic. It doesn't offer generic toxic positivity; it just hands you a logical exit plan step by step.”</blockquote>
+        <figcaption>Elena <span>· Toronto</span></figcaption>
+      </figure>
+      <figure class="review">
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        <blockquote>“The delegation log completely changed how I prep for my 1-on-1s. Instead of walking in complaining about my workload, I handed my director the physical sheet showing a 40% overflow. The counter-offer script from Chapter 6 got me a project reassignment within a week.”</blockquote>
+        <figcaption>Marcus <span>· Chicago</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
