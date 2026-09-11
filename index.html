@@ -11,12 +11,12 @@
      this file — static HTML fallbacks are pre-rendered):
 
        1. checkoutUrl ... every purchase button uses this (same tab)
-       2. price / currency / currencySymbol
+       2. price / compareAtPrice / currency / currencySymbol
        3. previewUrl .... "See inside the guide" links (ships pointing
                           at the included assets/before-you-resign-preview.pdf)
 
-     The static HTML ships with $9.99 pre-rendered so the page is
-     correct even before JavaScript runs. OG/social tags use the
+     The static HTML ships with $9.99 pre-rendered (compare-at $29.99)
+     so the page is correct even before JavaScript runs. OG/social tags use the
      placeholder domain https://your-domain.com — replace it before
      deploying (search for "your-domain.com").
      ============================================================ -->
@@ -256,6 +256,9 @@ strong{font-weight:600;color:var(--teal-ink)}
 .pricebox{position:sticky;top:28px;background:#fff;border:1.5px solid var(--gold);border-radius:18px;padding:38px 34px;box-shadow:0 24px 54px rgba(30,42,40,.14)}
 .pricebox .k{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);text-align:center}
 .pricebox .big{font-family:var(--display);font-weight:700;font-size:58px;color:var(--teal-deep);text-align:center;line-height:1;margin:16px 0 4px}
+.price-row{display:flex;align-items:baseline;justify-content:center;gap:12px}
+.pricebox .was{font-family:var(--sans);font-size:20px;font-weight:700;color:var(--ink-faint);text-decoration:line-through}
+.pricebox .off{font-family:var(--sans);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);text-align:center;margin:-16px 0 18px}
 .pricebox .cur{font-family:var(--sans);font-size:13.5px;color:var(--ink-faint);text-align:center;margin-bottom:24px}
 .pricebox .btn{width:100%}
 .pricebox .perks{list-style:none;margin-top:24px}
@@ -717,8 +720,9 @@ footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,19
       </div>
       <div class="pricebox">
         <div class="k">Instant PDF download</div>
-        <div class="big price-inline">$9.99</div>
+        <div class="price-row"><span class="big price-inline">$9.99</span><span class="was price-compare-inline">$29.99</span></div>
         <div class="cur currency-inline">USD · one-time payment</div>
+        <div class="off">Launch price — you save $20</div>
         <a class="btn btn--primary buy" href="https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX">Get Before You Resign <span class="nw">— <span class="price-inline">$9.99</span></span></a>
         <a class="link-preview link-preview--ink preview-link" href="assets/preview.pdf">or see inside the guide first (6-page PDF)</a>
         <ul class="perks">
@@ -803,7 +807,8 @@ footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,19
    before JavaScript runs.
    ========================================================== */
 var PRODUCT_CONFIG = {
-  price: "9.99",                 // e.g. "9.99", "499", "12.50"
+  price: "9.99",                 // selling price (current discount) — e.g. "9.99", "499", "12.50"
+  compareAtPrice: "29.99",       // regular price shown struck-through; set to "" to hide it
   currency: "USD",               // ISO code shown next to the price
   currencySymbol: "$",           // symbol shown before the amount
   checkoutUrl: "https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX",  // Polar.sh checkout — opens in same tab
@@ -820,6 +825,17 @@ var PRODUCT_CONFIG = {
   var i;
   for (i = 0; i < priceEls.length; i++) {
     priceEls[i].textContent = PRODUCT_CONFIG.currencySymbol + PRODUCT_CONFIG.price;
+  }
+  var wasEls = document.querySelectorAll(".price-compare-inline");
+  if (PRODUCT_CONFIG.compareAtPrice) {
+    for (i = 0; i < wasEls.length; i++) {
+      wasEls[i].textContent = PRODUCT_CONFIG.currencySymbol + PRODUCT_CONFIG.compareAtPrice;
+      wasEls[i].style.display = "";
+    }
+  } else {
+    for (i = 0; i < wasEls.length; i++) {
+      wasEls[i].style.display = "none";
+    }
   }
   for (i = 0; i < curEls.length; i++) {
     curEls[i].textContent = PRODUCT_CONFIG.currency + " · one-time payment";
