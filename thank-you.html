@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Order-confirmation page — not for search engines -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>Thank You — Before You Resign</title>
+<meta name="description" content="Your copy of Before You Resign — A 30-Day Action Guide is confirmed. Here's how to get started tonight.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#F9F5ED; --paper-2:#F1EADA; --ink:#22302E; --ink-soft:#4A5956; --ink-faint:#77817D;
+  --teal:#0E5A55; --teal-deep:#0A423E; --teal-ink:#072B28;
+  --terra:#BC5533; --terra-deep:#A04527;
+  --sand:#EFE4CF; --line:#D8CDB8; --line-soft:#E8E0CE;
+  --gold:#C89B4C; --cream:#F4EFE2; --cream-soft:#D9D2BF;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --display:'Fraunces',Georgia,serif;
+  --sans:'Inter','Segoe UI',Calibri,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.kicker{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:18px}
+.kicker::before{content:"";width:34px;height:3px;background:var(--terra);flex:none}
+.dark .kicker{color:var(--gold)}
+.dark .kicker::before{background:var(--gold)}
+h1,h2{font-family:var(--display);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:15px 28px;min-height:52px;transition:background-color .15s}
+.btn--primary{background:var(--terra);color:#FBF3EE}
+.btn--primary:hover{background:var(--terra-deep)}
+.btn--ghost{border:1.5px solid rgba(200,155,76,.6);color:var(--cream)}
+.btn--ghost:hover{background:rgba(200,155,76,.14)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* header */
+.site-head{background:var(--teal-ink);border-bottom:1px solid rgba(200,155,76,.25)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1120px}
+.brandline{font-family:var(--sans);font-size:12.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.brandline span{color:var(--gold)}
+.head-cta{font-family:var(--sans);font-size:13.5px;font-weight:700;color:var(--cream);text-decoration:none;border:1.5px solid rgba(200,155,76,.6);border-radius:999px;padding:9px 18px;white-space:nowrap}
+.head-cta:hover{background:rgba(200,155,76,.14)}
+.head-cta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* confirm hero */
+.confirm{background:radial-gradient(560px 560px at 88% 110%,rgba(14,90,85,.55),transparent 65%),radial-gradient(420px 420px at 78% -14%,rgba(200,155,76,.14),transparent 60%),var(--teal-ink);color:var(--cream);padding:76px 0 70px;position:relative;overflow:hidden}
+.confirm::before{content:"";position:absolute;right:-170px;top:-160px;width:480px;height:480px;border:1.5px solid rgba(200,155,76,.28);border-radius:50%}
+.confirm h1{font-size:clamp(30px,4.4vw,46px);color:#F6F1E4;margin-bottom:18px;max-width:22ch}
+.confirm .lede{font-size:19px;color:#E7E1CD;max-width:62ch}
+.confirm .lede em{color:var(--cream-soft)}
+/* body */
+section.body{padding:64px 0}
+.steps{list-style:none;counter-reset:st;max-width:760px;margin:34px 0 0}
+.steps li{counter-increment:st;position:relative;padding:20px 0 20px 50px;border-bottom:1px solid var(--line-soft);font-size:17px;color:var(--ink-soft)}
+.steps li::before{content:counter(st);position:absolute;left:0;top:22px;font-family:var(--sans);font-weight:800;font-size:13px;color:#fff;background:var(--teal);border-radius:50%;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center}
+.steps li strong{color:var(--ink)}
+.card{background:#fff;border:1px solid var(--line-soft);border-radius:16px;padding:30px 30px;margin-top:34px}
+.card h2{font-size:21px;margin-bottom:12px}
+.card p{color:var(--ink-soft);margin-bottom:12px}
+.card p:last-child{margin-bottom:0}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chip{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--teal-deep);background:var(--sand);border:1px solid var(--gold);border-radius:999px;padding:7px 14px}
+.next{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.safety{margin:44px auto 0;max-width:64ch;font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);border:1px solid var(--line);border-radius:12px;padding:14px 20px;background:var(--paper-2)}
+.safety a{color:var(--teal)}
+.safety strong{color:var(--teal-deep)}
+/* footer */
+footer{background:#061F1D;color:rgba(217,210,191,.72);padding:52px 0 44px;font-size:13.5px}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+footer a{color:var(--cream-soft)}
+footer .fine{margin-top:36px;padding-top:22px;border-top:1px solid rgba(217,210,191,.16);font-size:12.5px;line-height:1.7}
+footer .legal-nav{margin-top:14px}
+footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,191,.3)}
+@media (max-width:880px){
+  footer .cols{grid-template-columns:1fr;gap:28px}
+  .confirm{padding:56px 0}
+  section.body{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brandline" href="index.html">Before You <span>Resign</span></a>
+    <a class="head-cta" href="contact.html">Need help?</a>
+  </div>
+</header>
+
+<section class="confirm">
+  <div class="wrap">
+    <div class="kicker">Order confirmed</div>
+    <h1>Thank you — your copy of Before You Resign is on its way.</h1>
+    <p class="lede">Polar, our payment provider, processed your order and handles the delivery of your ebook. Your download link appears on the confirmation screen and is sent to the email address you used at checkout. <em>Nothing ships, nothing to wait for — it's a PDF.</em></p>
+  </div>
+</section>
+
+<section class="body">
+  <div class="wrap">
+    <div class="kicker">Start tonight</div>
+    <h2 style="font-size:clamp(24px,3.4vw,32px)">Three small steps are enough for your first evening.</h2>
+    <ol class="steps">
+      <li><strong>If tonight is a hard night, start with the safety page</strong> — page 5 of the guide. It comes before everything else, on purpose.</li>
+      <li><strong>Do the two-minute three-line note</strong> (Chapter 1). It separates today's incident from tomorrow's decision — and gives you permission to stop for the night.</li>
+      <li><strong>Pick one script from Chapter 4</strong> and save it where you can find it. One factual sentence you can send tomorrow is a real start.</li>
+    </ol>
+    <p style="margin-top:24px;font-size:18px;max-width:62ch">That's enough for tonight. The rest of the guide — the pressure map, the capacity page, the repair test, your financial runway and the 30-day plan — can wait for daylight.</p>
+
+    <div class="card">
+      <h2>Don't see the download?</h2>
+      <p>First, check your spam or promotions folder — delivery emails sometimes land there. Give it a few minutes; busy payment moments can delay email slightly.</p>
+      <p>Still nothing? Write to us at <a href="contact.html">the contact page</a> and include <strong>the email address you used at checkout</strong> (and the order ID from your Polar receipt, if you have it). We'll sort it out.</p>
+    </div>
+
+    <div class="chips">
+      <span class="chip">64-page PDF (A4)</span><span class="chip">11 worksheets</span><span class="chip">11 workplace scripts</span><span class="chip">30-day plan</span><span class="chip">Stay / Change / Leave dashboard</span><span class="chip">Print the worksheets any time</span>
+    </div>
+
+    <div class="next">
+      <a class="btn btn--primary" href="index.html">Back to the site</a>
+      <a class="btn btn--ghost" href="contact.html">Contact support</a>
+    </div>
+
+    <p class="safety"><strong>One important note:</strong> if you are in crisis or cannot stay safe, please don't wait on an ebook — contact your local emergency number, or find a helpline in your country at <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a>. The guide will be here when you're ready.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Before You Resign</h4>
+        <p>A 30-day action guide to reduce work pressure, set boundaries and decide what comes next. Global edition by Aijaz Siddique.</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Download or access questions: <a href="contact.html">contact us</a>. In crisis? Call your local emergency number or find a helpline at <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a>.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <p><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+      </div>
+    </div>
+    <div class="fine">
+      <p><em>Before You Resign</em> is an educational guide to workplace decisions. It does not diagnose, treat or cure burnout or any health condition, and it is not individual medical, psychological, legal, employment-law or financial advice. Workplace examples are fictional composites. © 2026 Aijaz Siddique. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

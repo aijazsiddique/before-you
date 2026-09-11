@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     BEFORE YOU RESIGN — SALES PAGE
+     ------------------------------------------------------------
+     EDIT THESE VALUES (set in PRODUCT_CONFIG at the bottom of
+     this file — static HTML fallbacks are pre-rendered):
+
+       1. checkoutUrl ... every purchase button uses this (same tab)
+       2. price / currency / currencySymbol
+       3. previewUrl .... "See inside the guide" links (ships pointing
+                          at the included assets/before-you-resign-preview.pdf)
+
+     The static HTML ships with $9.99 pre-rendered so the page is
+     correct even before JavaScript runs. OG/social tags use the
+     placeholder domain https://your-domain.com — replace it before
+     deploying (search for "your-domain.com").
+     ============================================================ -->
+
+<title>Before You Resign — A 30-Day Action Guide for Deciding What Comes Next</title>
+<meta name="description" content="A practical 30-day action guide for employed people who feel close to quitting: 12 chapters, 11 worksheets, 11 workplace scripts and a financial runway plan — so you can reduce the pressure, test whether the job can be repaired, and decide your next move deliberately.">
+<link rel="canonical" href="https://your-domain.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Before You Resign">
+<meta property="og:title" content="Before You Resign — A 30-Day Action Guide">
+<meta property="og:description" content="Reduce work pressure, set boundaries and decide what comes next — with worksheets, scripts and a plan you can start tonight. You do not have to solve your entire career tonight.">
+<meta property="og:url" content="https://your-domain.com/">
+<meta property="og:image" content="https://your-domain.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Before You Resign — A 30-Day Action Guide">
+<meta name="twitter:description" content="For anyone thinking “I can't keep working like this — but I'm not sure quitting is the right move.” 11 worksheets, 11 scripts, a 30-day plan.">
+<meta name="twitter:image" content="https://your-domain.com/assets/img/og-image.jpg">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- Product structured data (Book/EBook; no ratings or reviews — none exist) -->
+<script type="application/ld+json" id="ldj-product">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Before You Resign — A 30-Day Action Guide",
+  "author": { "@type": "Person", "name": "Aijaz Siddique" },
+  "bookFormat": "https://schema.org/EBook",
+  "inLanguage": "en",
+  "numberOfPages": 64,
+  "description": "A 64-page practical action guide for employed people considering resignation: 12 chapters, 11 worksheets, 11 workplace scripts, a financial runway worksheet, a Stay/Change/Leave decision dashboard and a 30-day action plan.",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= Design tokens — from the book ================= */
+:root{
+  --paper:#F9F5ED; --paper-2:#F1EADA; --ink:#22302E; --ink-soft:#4A5956; --ink-faint:#77817D;
+  --teal:#0E5A55; --teal-deep:#0A423E; --teal-ink:#072B28; --teal-tint:#E3EDEA; --teal-tint-2:#EEF4F1;
+  --terra:#BC5533; --terra-deep:#A04527; --terra-tint:#F6E2D7;
+  --sand:#EFE4CF; --line:#D8CDB8; --line-soft:#E8E0CE;
+  --gold:#C89B4C; --cream:#F4EFE2; --cream-soft:#D9D2BF;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --display:'Fraunces',Georgia,serif;
+  --sans:'Inter','Segoe UI',Calibri,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+::selection{background:var(--teal-tint)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.wrap--narrow{max-width:880px}
+section{padding:88px 0}
+h1,h2,h3{font-family:var(--display);color:var(--teal-deep);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:20px}
+h3{font-size:22px}
+p{margin:0 0 16px}
+strong{font-weight:600;color:var(--teal-ink)}
+.em{font-style:italic}
+.kicker{display:flex;align-items:center;gap:12px;font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:18px}
+.kicker::before{content:"";width:34px;height:3px;background:var(--terra);flex:none}
+.dark .kicker{color:var(--gold)}
+.dark .kicker::before{background:var(--gold)}
+.dark{background:var(--teal-ink);color:var(--cream)}
+.dark h2,.dark h3{color:var(--cream)}
+.dark p{color:#DDD6C2}
+.dark strong{color:#fff}
+.tint{background:var(--paper-2)}
+.lede{font-size:19.5px;color:var(--ink-soft);max-width:62ch}
+.dark .lede{color:var(--cream-soft)}
+.small{font-size:14.5px}
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:17px;text-decoration:none;border-radius:12px;padding:17px 34px;min-height:56px;transition:background-color .15s ease,transform .15s ease}
+.btn--primary{background:var(--terra);color:#FBF3EE}
+.btn--primary:hover{background:var(--terra-deep)}
+.btn--teal{background:var(--teal-deep);color:var(--cream)}
+.btn--teal:hover{background:var(--teal)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.buy-note{font-family:var(--sans);font-size:14px;color:var(--ink-faint);margin-top:12px}
+.dark .buy-note{color:rgba(217,210,191,.75)}
+.buy-note--center{text-align:center}
+.nw{white-space:nowrap}
+/* ---------- header ---------- */
+.site-head{background:var(--teal-ink);border-bottom:1px solid rgba(200,155,76,.25)}
+@media (min-width:881px){.site-head{position:sticky;top:0;z-index:40}}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brandline{font-family:var(--sans);font-size:12.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.brandline span{color:var(--gold)}
+.head-cta{font-family:var(--sans);font-size:13.5px;font-weight:700;color:var(--cream);text-decoration:none;border:1.5px solid rgba(200,155,76,.6);border-radius:999px;padding:9px 18px;transition:background-color .15s}
+.head-cta:hover{background:rgba(200,155,76,.14)}
+.head-cta:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(640px 640px at 86% 106%,rgba(14,90,85,.6),transparent 65%),radial-gradient(460px 460px at 76% -12%,rgba(200,155,76,.14),transparent 60%),var(--teal-ink);color:var(--cream);padding:84px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-190px;top:130px;width:560px;height:560px;border:1.5px solid rgba(200,155,76,.30);border-radius:50%}
+.hero::after{content:"";position:absolute;right:-90px;top:250px;width:560px;height:560px;border:1.5px solid rgba(200,155,76,.18);border-radius:50%}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero .kicker{color:var(--gold)}
+.hero .kicker::before{background:var(--gold)}
+.hero h1{font-size:clamp(34px,4.6vw,54px);color:#F6F1E4;margin-bottom:22px}
+.hero .lede{font-size:20px;margin-bottom:30px;color:#E7E1CD}
+.hero-bullets{list-style:none;margin:0 0 34px}
+.hero-bullets li{position:relative;padding-left:30px;margin-bottom:15px;color:var(--cream-soft)}
+.hero-bullets li strong{color:var(--cream)}
+.hero-bullets li::before{content:"";position:absolute;left:2px;top:11px;width:9px;height:9px;border-radius:50%;background:var(--terra)}
+.hero-cta-row{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hero-micro{margin-top:14px;font-family:var(--sans);font-size:14px;color:rgba(217,210,191,.8);max-width:56ch}
+.hero-proof{margin:18px 0 0;font-family:var(--sans);font-size:13.5px;font-weight:700;letter-spacing:.04em;color:#E8E0CC}
+.link-preview{color:var(--gold);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(200,155,76,.55);padding-bottom:1px}
+.link-preview:hover{color:#F6F1E4}
+.link-preview:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.link-preview--ink{color:var(--teal);border-color:rgba(14,90,85,.4)}
+.link-preview--ink:hover{color:var(--teal-deep)}
+.pricebox .link-preview{display:flex;width:fit-content;margin:14px auto 0}
+.fit-note{margin-top:26px;font-size:15px;color:var(--ink-soft);max-width:78ch}
+.bookshot{position:relative;justify-self:center}
+.bookshot .book{width:min(340px,72vw);border-radius:6px;box-shadow:-26px 34px 70px rgba(0,0,0,.5),0 4px 18px rgba(0,0,0,.35)}
+.bookshot::before{content:"";position:absolute;inset:0;transform:translate(18px,18px);border:1.5px solid rgba(200,155,76,.45);border-radius:6px;z-index:0}
+.bookshot .book{position:relative;z-index:1}
+/* ---------- recognition ---------- */
+.recog{list-style:none;max-width:820px}
+.recog li{position:relative;padding:18px 0 18px 34px;border-bottom:1px solid var(--line-soft);font-size:18.5px}
+.recog li::before{content:"";position:absolute;left:2px;top:28px;width:10px;height:10px;border-radius:50%;background:var(--terra)}
+.recog-close{margin-top:28px;font-size:19.5px}
+.recog-close strong{color:var(--teal-deep)}
+/* ---------- contrast ---------- */
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.contrast-card{background:rgba(249,245,237,.05);border:1px solid rgba(200,155,76,.30);border-radius:14px;padding:34px 32px}
+.contrast-card--no{border-color:rgba(217,210,191,.22);background:rgba(0,0,0,.14)}
+.contrast-card h3{font-size:20px;margin-bottom:18px}
+.contrast-card--yes h3{color:var(--gold)}
+.contrast-card ul{list-style:none}
+.contrast-card li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid rgba(217,210,191,.14);font-size:16.5px}
+.contrast-card--no li{color:var(--cream-soft)}
+.contrast-card--no li::before{content:"—";position:absolute;left:0;color:rgba(217,210,191,.5)}
+.contrast-card--yes li{color:var(--cream)}
+.contrast-card--yes li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--terra)}
+.contrast-punch{margin-top:44px;text-align:center;font-family:var(--display);font-style:italic;font-size:clamp(21px,3vw,28px);color:var(--cream)}
+/* ---------- guide intro / stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:44px 0 0}
+.stat{background:#fff;border:1px solid var(--line-soft);border-radius:14px;padding:26px 22px;text-align:center}
+.stat .n{font-family:var(--display);font-weight:700;font-size:42px;color:var(--teal);line-height:1}
+.stat .l{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
+.factstrip{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:30px;font-family:var(--sans);font-size:14.5px;color:var(--ink-soft)}
+.factstrip span{display:inline-flex;align-items:flex-start;gap:9px}
+.factstrip span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;margin-top:8px}
+/* ---------- method (3 parts) ---------- */
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.part{background:#fff;border:1px solid var(--line-soft);border-radius:16px;padding:32px 30px;display:flex;flex-direction:column}
+.part .roman{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--teal);border-radius:8px;padding:6px 12px;align-self:flex-start}
+.part h3{margin:18px 0 6px;font-size:21px}
+.part .chs{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.part ul{list-style:none;margin-top:2px}
+.part li{position:relative;padding:8px 0 8px 22px;font-size:15.5px;color:var(--ink-soft);border-bottom:1px solid var(--line-soft)}
+.part li:last-child{border-bottom:none}
+.part li::before{content:"";position:absolute;left:1px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--terra)}
+/* ---------- tools rows ---------- */
+.tool-row{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;padding:44px 0;border-bottom:1px solid var(--line-soft)}
+.tool-row:last-child{border-bottom:none}
+.tool-row.flip .tool-media{order:2}
+.tool-media{position:relative}
+.pageframe{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 18px 44px rgba(30,42,40,.16),0 3px 10px rgba(30,42,40,.10);max-width:400px}
+.pageframe img{width:100%}
+.tool-media .pageframe{transform:rotate(-1.1deg)}
+.tool-row.flip .tool-media .pageframe{transform:rotate(1.1deg)}
+.pagemark{position:absolute;top:-13px;left:22px;z-index:2;background:var(--sand);border:1px solid var(--gold);border-radius:999px;font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);padding:7px 14px;white-space:nowrap}
+.tool-copy .tag{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.tool-copy h3{font-size:clamp(22px,2.6vw,28px);margin-bottom:14px}
+.tool-copy p{color:var(--ink-soft)}
+.tool-copy .real{background:var(--teal-tint-2);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0;font-size:16.5px;color:var(--teal-ink)}
+.tool-copy .real .qm{font-family:var(--display);font-size:26px;color:var(--teal);opacity:.5;line-height:0;vertical-align:-8px;margin-right:6px}
+.chipset{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 4px}
+.chip{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--teal-deep);background:var(--sand);border:1px solid var(--gold);border-radius:999px;padding:7px 14px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.duo>div{position:relative}
+.duo .pageframe{max-width:none}
+/* ---------- what you'll have ---------- */
+.have{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.have-card{background:#fff;border:1px solid var(--line-soft);border-radius:16px;padding:32px 30px}
+.have-card h3{font-size:20px;margin-bottom:16px}
+.have-card ul{list-style:none}
+.have-card li{position:relative;padding:8px 0 8px 26px;font-size:16px;color:var(--ink-soft);border-bottom:1px solid var(--line-soft)}
+.have-card li:last-child{border-bottom:none}
+.have-card li::before{content:"";position:absolute;left:2px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.have-card--later li::before{background:var(--teal)}
+.have-close{margin-top:36px;font-size:19px;max-width:74ch}
+/* ---------- paths ---------- */
+/* ---------- runway five numbers ---------- */
+/* ---------- plan 30 ---------- */
+/* ---------- fit (for / not for) ---------- */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.fit-card{border-radius:16px;padding:34px 30px;background:#fff;border:1px solid var(--line-soft)}
+.fit-card--no{background:var(--paper-2)}
+.fit-card h3{font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.fit-card h3 .dot{width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:800;font-size:15px;flex:none}
+.fit-card--yes h3 .dot{background:var(--teal);color:#fff}
+.fit-card--no h3 .dot{background:var(--terra);color:#fff}
+.fit-card ul{list-style:none}
+.fit-card li{position:relative;padding:9px 0 9px 26px;font-size:16px;color:var(--ink-soft);border-bottom:1px solid var(--line-soft)}
+.fit-card li:last-child{border-bottom:none}
+.fit-card--yes li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;font-family:var(--sans)}
+.fit-card--no li::before{content:"";position:absolute;left:4px;top:21px;width:10px;height:2px;background:var(--terra)}
+/* ---------- accordion ---------- */
+.acc{margin-top:36px;border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-family:var(--display);font-weight:600;font-size:19px;color:var(--teal-deep)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-family:var(--sans);font-weight:600;font-size:26px;color:var(--terra);flex:none;line-height:1;transition:transform .18s ease}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.acc .a{padding:0 4px 24px;max-width:72ch;color:var(--ink-soft)}
+/* ---------- value stack ---------- */
+.value{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;margin-top:44px;align-items:start}
+.stack h3{font-size:19px;margin:26px 0 10px}
+.stack h3:first-child{margin-top:0}
+.stack ul{list-style:none}
+.stack li{position:relative;padding:7px 0 7px 24px;font-size:16px;color:var(--ink-soft);border-bottom:1px solid var(--line-soft)}
+.stack li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.pricebox{position:sticky;top:28px;background:#fff;border:1.5px solid var(--gold);border-radius:18px;padding:38px 34px;box-shadow:0 24px 54px rgba(30,42,40,.14)}
+.pricebox .k{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);text-align:center}
+.pricebox .big{font-family:var(--display);font-weight:700;font-size:58px;color:var(--teal-deep);text-align:center;line-height:1;margin:16px 0 4px}
+.pricebox .cur{font-family:var(--sans);font-size:13.5px;color:var(--ink-faint);text-align:center;margin-bottom:24px}
+.pricebox .btn{width:100%}
+.pricebox .perks{list-style:none;margin-top:24px}
+.pricebox .perks li{position:relative;padding:7px 0 7px 24px;font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
+.pricebox .perks li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:800}
+/* ---------- author ---------- */
+.author{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:start}
+.mono{width:108px;height:108px;border-radius:16px;background:var(--teal-ink);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:52px;color:var(--gold);box-shadow:0 14px 32px rgba(7,43,40,.25)}
+.author .init{font-size:15.5px;letter-spacing:.24em;font-family:var(--sans);font-weight:800}
+.author p{max-width:70ch}
+/* ---------- final ---------- */
+.final{text-align:center;padding:110px 0}
+.final .brand-line{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(28px,4.4vw,44px);color:var(--cream);max-width:21ch;margin:0 auto 20px}
+.final .sub{font-size:19px;color:var(--cream-soft);max-width:56ch;margin:0 auto 38px}
+.final .hero-cta-row{justify-content:center}
+.safety{margin:34px auto 0;max-width:64ch;font-family:var(--sans);font-size:13.5px;color:rgba(217,210,191,.75);border:1px solid rgba(200,155,76,.3);border-radius:12px;padding:14px 20px}
+.safety a{color:var(--gold)}
+/* ---------- footer ---------- */
+footer{background:#061F1D;color:rgba(217,210,191,.72);padding:52px 0 44px;font-size:13.5px}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+footer a{color:var(--cream-soft)}
+footer .fine{margin-top:36px;padding-top:22px;border-top:1px solid rgba(217,210,191,.16);font-size:12.5px;line-height:1.7}
+footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,191,.3)}
+/* ---------- sticky mobile bar ---------- */
+.mobbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--teal-ink);border-top:1px solid rgba(200,155,76,.45);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:none}
+.mobbar[hidden]{display:none}
+.mobbar .in{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:640px;margin:0 auto}
+.mobbar .t{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--cream-soft);line-height:1.3}
+.mobbar .t .p{display:block;font-family:var(--display);font-size:19px;font-weight:700;color:var(--cream)}
+.mobbar .btn{padding:13px 22px;min-height:48px;font-size:15px;border-radius:10px}
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr;gap:52px}
+  .bookshot{justify-self:center;margin-left:0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .parts{grid-template-columns:1fr;max-width:640px}
+  .tool-row{grid-template-columns:1fr;gap:34px;padding:38px 0}
+  .tool-row.flip .tool-media{order:0}
+  .tool-media .pageframe,.tool-row.flip .tool-media .pageframe{transform:none;margin:0 auto}
+  .duo{grid-template-columns:1fr;max-width:420px}
+  .value{grid-template-columns:1fr}
+  .pricebox{position:static}
+}
+@media (max-width:880px){
+  section{padding:64px 0}
+  .wrap{padding:0 20px}
+  .site-head .wrap{height:56px}
+  .brandline{font-size:11px;letter-spacing:.14em;white-space:nowrap}
+  .head-cta{font-size:12px;padding:8px 12px;white-space:nowrap}
+  .contrast,.have,.fit{grid-template-columns:1fr}
+  .author{grid-template-columns:1fr;gap:24px}
+  footer .cols{grid-template-columns:1fr;gap:28px}
+  .mobbar{display:block}
+  footer{padding-bottom:calc(44px + 76px)}
+  .hero{padding:60px 0 72px}
+  .hero-cta-row .btn{width:100%}
+  .pricebox{padding:30px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brandline" href="#top">Before You <span>Resign</span></a>
+    <a class="head-cta buy" href="https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX">Get the guide — <span class="price-inline">$9.99</span></a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker">A 30-Day Action Guide · Global Edition</div>
+      <h1>Before You Resign, Find Out What Actually Needs to Change — and What Comes Next.</h1>
+      <p class="lede">A 30-day action guide for the moment when <em>“I can't keep working like this”</em> is true — but quitting tonight may not be the answer. Worksheets, workplace scripts, financial tools and a decision framework — so your next move is chosen, not stumbled into.</p>
+      <div class="hero-cta-row">
+        <a class="btn btn--primary buy" href="https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX">Get Before You Resign <span class="nw">— <span class="price-inline">$9.99</span></span></a>
+      </div>
+      <p class="hero-proof">11 worksheets&ensp;·&ensp;11 workplace scripts&ensp;·&ensp;financial runway&ensp;·&ensp;Stay / Change / Leave dashboard</p>
+      <p class="hero-micro">Instant 64-page PDF (A4) · read it on phone, tablet or desktop · print the worksheets when you want to write things out. &nbsp;<a class="link-preview preview-link" href="assets/preview.pdf">See inside the guide →</a></p>
+      <ul class="hero-bullets">
+        <li><strong>Name the real problem.</strong> Turn “I hate my job” into one or two specific, changeable pressures — workload, manager, company or fit.</li>
+        <li><strong>Use words that work.</strong> 11 practical scripts for competing priorities, “everything is urgent,” late-night messages, weekend work and more — with lower-risk alternatives where appropriate, plus a before-you-send checklist.</li>
+        <li><strong>Know your numbers.</strong> A one-page financial runway: usable money, essential spending, monthly shortfall, approximate runway.</li>
+        <li><strong>Repair it or rule it out — with a date.</strong> Conditions, a review date, and a next step if nothing changes. No more open-ended waiting.</li>
+      </ul>
+    </div>
+    <div class="bookshot">
+      <img class="book" src="assets/img/page-cover.webp" width="1000" height="1414" alt="Cover of the ebook Before You Resign — A 30-Day Action Guide by Aijaz Siddique" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECOGNITION ================= -->
+<section>
+  <div class="wrap wrap--narrow">
+    <div class="kicker">Does this sound familiar?</div>
+    <h2>If you're honest, some of this is your life right now.</h2>
+    <ul class="recog">
+      <li>A message lands at 9:40 p.m. — “one quick change.” There is no quick change.</li>
+      <li>You've written the resignation email in your head twice this week. You've never once pressed send.</li>
+      <li>Sunday starts feeling ruined around Saturday lunchtime.</li>
+      <li>Two managers, one of you, and everything marked urgent.</li>
+      <li>Your family can't agree on advice: “just quit” from one side, “just tolerate it” from the other.</li>
+      <li>The scariest thought isn't staying. It's that the next job might quietly become this one.</li>
+    </ul>
+    <p class="recog-close">If even two of these feel familiar, the situation deserves a structured look — before you make a <strong>high-stakes career and financial decision</strong> with the information you currently have.</p>
+  </div>
+</section>
+
+<!-- ================= THE DANGEROUS MOMENT ================= -->
+<section class="dark">
+  <div class="wrap">
+    <div class="kicker">The dangerous moment</div>
+    <h2>The riskiest career decision you'll ever make is the one made at your worst hour.</h2>
+    <p class="lede">Resignation emails get drafted late at night, by people who are exhausted, angry, scared — and missing the information a decision this size deserves. Leaving feels like the only action <em>large enough to match how bad you feel</em>. The feeling deserves attention. The email does not have to be sent tonight.</p>
+    <p class="lede">And “stay forever” is not the only alternative. Before You Resign exists for the space between those two: the weeks where you slow the decision down, reduce this week's pressure, and find out what the facts actually say.</p>
+    <div class="contrast">
+      <div class="contrast-card contrast-card--no">
+        <h3>The advice you keep hearing</h3>
+        <ul>
+          <li>“Quit.” — usually from people who won't help with the mortgage.</li>
+          <li>“Push through.” — from people who've never seen your 2 a.m.</li>
+          <li>“Just set boundaries.” — as if the other person weren't holding the deadline.</li>
+          <li>“Take a vacation.” — rest genuinely helps; it changes how you feel, not what the job requires.</li>
+          <li>“Follow your passion.” — expensive advice when rent is due.</li>
+        </ul>
+      </div>
+      <div class="contrast-card contrast-card--yes">
+        <h3>What this guide helps you do instead</h3>
+        <ul>
+          <li>Find out what is actually happening — and what it's doing to you.</li>
+          <li>Test what can change at work, with a review date and a next step if it doesn't.</li>
+          <li>Understand what leaving would cost, in numbers rather than dread.</li>
+          <li>Compare your real options: stay with changes, adjust, transfer, search, or prepare an exit.</li>
+          <li>Decide deliberately — with evidence you could explain to yourself in daylight.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="contrast-punch">You don't need a verdict. You need a method.</p>
+  </div>
+</section>
+
+<!-- ================= MEET THE GUIDE ================= -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Meet the guide</div>
+    <h2>A working session, not a pep talk.</h2>
+    <div class="wrap--narrow" style="padding:0">
+      <p class="lede">Most people considering resignation do not need another motivational speech. They need a way to separate a terrible week from an unsustainable job, understand the financial consequences before acting, and decide their next move with a clearer head. That is what this guide provides — its own opening page says exactly that.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">64</div><div class="l">Pages · PDF</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Chapters</div></div>
+      <div class="stat"><div class="n">11</div><div class="l">Worksheets</div></div>
+      <div class="stat"><div class="n">11</div><div class="l">Workplace scripts</div></div>
+    </div>
+    <div class="factstrip">
+      <span>3 appendices, incl. interview questions that reveal the real job</span>
+      <span>Stay / Change / Leave decision dashboard</span>
+      <span>Crisis-support listings for the US, Canada, the UK, the EU, Australia and India</span>
+      <span>Health &amp; safety information drawn from official sources (WHO, NHS), fully referenced</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE METHOD: 3 PARTS ================= -->
+<section class="tint">
+  <div class="wrap">
+    <div class="kicker">The method</div>
+    <h2>Three parts. In the right order.</h2>
+    <p class="lede">The book is built so each part makes the next one possible — and so you can stop at any point and still have something useful.</p>
+    <div class="parts">
+      <div class="part">
+        <span class="roman">Part I</span>
+        <h3>Reduce the immediate pressure</h3>
+        <div class="chs">Chapters 1–3</div>
+        <ul>
+          <li><strong>Make tonight smaller</strong> — a ten-minute landing for your worst evenings, and a two-minute three-line note that separates today's incident from tomorrow's decision.</li>
+          <li><strong>Name the pressure accurately</strong> — is this workload, control, support, relationships, conflicting managers, work fit, or life outside work?</li>
+          <li><strong>Make the workload visible</strong> — a capacity page that turns “I have too much work” into a concrete trade-off.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <span class="roman">Part II</span>
+        <h3>Change what happens at work</h3>
+        <div class="chs">Chapters 4–7</div>
+        <ul>
+          <li><strong>Say what can actually be done</strong> — 11 practical scripts, with lower-risk alternatives where appropriate and a “before you send” checklist.</li>
+          <li><strong>Have one useful conversation</strong> — a meeting card, plus follow-ups for the six responses managers actually give.</li>
+          <li><strong>Create room to recover</strong> — rest, leave with limited disclosure, and a return that's actually protected.</li>
+          <li><strong>Give repair a fair, limited test</strong> — conditions, a review date, and what you'll do if the changes never happen.</li>
+        </ul>
+      </div>
+      <div class="part">
+        <span class="roman">Part III</span>
+        <h3>Make the next career decision</h3>
+        <div class="chs">Chapters 8–12</div>
+        <ul>
+          <li><strong>Compare five real paths</strong> — stay with changes, leave or adjustments, internal transfer, search while employed, prepared resignation.</li>
+          <li><strong>Put the financial facts on one page</strong> — runway, stress tests, cash timing.</li>
+          <li><strong>Move without a second crisis</strong> — searches, interviews, resignations, counteroffers.</li>
+          <li><strong>Bring your household into the plan</strong> — and finish with a 30-day plan and a decision dashboard.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOOLS (tangible product) ================= -->
+<section id="tools">
+  <div class="wrap">
+    <div class="kicker">What you'll actually do</div>
+    <h2>Not “reading material.” Tools you'll use.</h2>
+    <p class="lede">Every page below is a real page from the guide. This is the part of the book you'll work in — the worksheets, scripts and dashboards that turn a 1 a.m. feeling into a decision you can defend. Or <a class="link-preview link-preview--ink preview-link" href="assets/preview.pdf">browse a 6-page preview (PDF) first →</a></p>
+
+    <div class="tool-row">
+      <div class="tool-media">
+        <span class="pagemark">Actual page · Worksheet 2</span>
+        <figure class="pageframe"><picture><source srcset="assets/img/page-pressure.webp" type="image/webp"><img src="assets/img/page-pressure.jpg" width="800" height="1131" alt="Worksheet 2, the pressure map: nine possible sources of workplace pressure with examples to look for" loading="lazy"></picture></figure>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Worksheet 2 · ~8 minutes</div>
+        <h3>The Pressure Map</h3>
+        <p>Not every bad job is the same bad job. The map covers nine sources of pressure drawn from occupational-health guidance — work volume, lack of control, missing support, relationships, conflicting responsibilities, change, physical conditions, work fit, life outside work. You pick the <strong>two worth acting on first</strong>, attach a recent example to each, and name <strong>who can actually change it</strong>. “I hate my job” becomes: <em>the manager changed the priority three times this week and moved no deadlines.</em> That's a problem with an owner.</p>
+      </div>
+    </div>
+
+    <div class="tool-row flip">
+      <div class="tool-media">
+        <span class="pagemark">Actual page · Worksheet 3</span>
+        <figure class="pageframe"><picture><source srcset="assets/img/page-capacity.webp" type="image/webp"><img src="assets/img/page-capacity.jpg" width="800" height="1132" alt="Worksheet 3, the capacity page: scheduled hours, fixed commitments and planned work in one table" loading="lazy"></picture></figure>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Worksheet 3 · ~10 minutes</div>
+        <h3>The Capacity Page</h3>
+        <p>“I have too much work” is a feeling. The capacity page makes it arithmetic: scheduled hours, fixed meetings and breaks, realistic interruptions, time left for planned work — and the gap. Then you choose what changes: <strong>delay, delegate, reduce, or stop</strong>. A worked example shows exactly how it plays out: 40 scheduled hours, but only about 20 left for planned work once meetings, breaks and recurring requests are accounted for — against 26 hours of planned work. That's a six-hour gap, and a proposal a manager can answer with a yes, a no, or a counter-offer.</p>
+      </div>
+    </div>
+
+    <div class="tool-row">
+      <div class="tool-media">
+        <span class="pagemark">Actual page · Chapter 4</span>
+        <figure class="pageframe"><picture><source srcset="assets/img/page-scripts.webp" type="image/webp"><img src="assets/img/page-scripts.jpg" width="800" height="1131" alt="Chapter 4 open: scripts for two competing priorities and when everything is urgent" loading="lazy"></picture></figure>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Chapter 4 · The 11 scripts</div>
+        <h3>Words for the requests you keep not making</h3>
+        <div class="chipset">
+          <span class="chip">Two competing priorities</span><span class="chip">When everything is urgent</span><span class="chip">A last-minute meeting</span><span class="chip">The late-night message</span><span class="chip">Weekend work</span><span class="chip">Repeated “small” additions</span><span class="chip">Two managers, two instructions</span><span class="chip">Feedback becomes personal</span><span class="chip">Fatigue affects safety</span><span class="chip">An estimate is challenged</span><span class="chip">The guilt trip</span>
+        </div>
+        <div class="real"><span class="qm">“</span>I can finish the client proposal by Thursday or the revised report by Thursday. I can't complete both to the required standard in that time. Which should come first, and can the other move to Monday?”</div>
+        <p>Some scripts include <strong>lower-risk alternatives</strong> for the days when a firm refusal could cost you something, and the chapter closes with a “before you send” checklist. For the lowest-energy moments, one factual sentence fits in any chat window: <em>“What should move so I can take this on?”</em></p>
+      </div>
+    </div>
+
+    <div class="tool-row flip">
+      <div class="tool-media">
+        <span class="pagemark">Actual page · Worksheet 6</span>
+        <figure class="pageframe"><picture><source srcset="assets/img/page-repair.webp" type="image/webp"><img src="assets/img/page-repair.jpg" width="800" height="1131" alt="Worksheet 6, the repair agreement: required changes, review date and next steps if changes do not happen" loading="lazy"></picture></figure>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Worksheet 6 · ~12 minutes</div>
+        <h3>The Repair Agreement</h3>
+        <p>“Things will improve” is not a plan; it's a promise with no expiry date. The repair agreement turns it into a bounded test: the required change, <strong>who can make it happen</strong>, the start date, <strong>what will show it happened</strong>, a review date — and, in writing, <strong>what you will do if the changes do not happen</strong>. You are not required to test an unsafe situation; the guide is explicit about that. But where repair is plausible, this is how you find out instead of waiting indefinitely.</p>
+        <div class="real"><span class="qm">“</span>I need <em>[this]</em> to change by <em>[date]</em>. If it does not, my next step is <em>[step]</em>.”</div>
+      </div>
+    </div>
+
+    <div class="tool-row">
+      <div class="tool-media">
+        <span class="pagemark">Actual page · Worksheet 8</span>
+        <figure class="pageframe"><picture><source srcset="assets/img/page-runway.webp" type="image/webp"><img src="assets/img/page-runway.jpg" width="800" height="1131" alt="Worksheet 8, the financial runway page: essential monthly spending and reliable income during the gap" loading="lazy"></picture></figure>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Worksheet 8 · ~20 minutes, or two short sessions</div>
+        <h3>Your Runway Page</h3>
+        <p>The financial facts, on one page, in any currency: usable transition money, essential monthly spending, reliable income during the gap, monthly shortfall, approximate runway. Then the guide stress-tests your hopeful version and walks through cash timing, employer health coverage end dates, and repayment clauses to check <strong>before</strong> giving notice. Financial fear feeds on vagueness; this chapter feeds it facts — a full worked example included, clearly labelled <em>a worked example, not a target</em>.</p>
+      </div>
+    </div>
+
+    <div class="tool-row flip">
+      <div class="tool-media duo">
+        <div>
+          <span class="pagemark">Worksheet 9 · The 30-day plan</span>
+          <figure class="pageframe"><picture><source srcset="assets/img/page-plan.webp" type="image/webp"><img src="assets/img/page-plan.jpg" width="800" height="1132" alt="Worksheet 9, a 30-day plan with one main action per period" loading="lazy"></picture></figure>
+        </div>
+        <div>
+          <span class="pagemark">Page 52 · Decision dashboard</span>
+          <figure class="pageframe"><picture><source srcset="assets/img/page-dashboard.webp" type="image/webp"><img src="assets/img/page-dashboard.jpg" width="800" height="1131" alt="The stay, change or leave decision dashboard with six evidence questions" loading="lazy"></picture></figure>
+        </div>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Worksheets 9–10 + dashboard</div>
+        <h3>The 30-Day Plan &amp; the Decision Dashboard</h3>
+        <p>The plan breaks the month into four windows — <strong>one main action each</strong>, from “address immediate needs” to “review options and money” — with what you'll have afterwards. The decision dashboard compresses everything into six evidence questions, ticked for what you've <em>observed</em>, not what you hope. Worksheet 10 turns the result into a dated record: your next step, your constraint, your fallback, your review date. Thirty days is a planning window, not a deadline for your entire career — the guide says that too.</p>
+        <p class="small">One rule sits above every path — stay, change or leave: if health or safety requires immediate action, that comes first. The guide says so on page 5, not in a footnote.</p>
+      </div>
+    </div>
+
+    <div class="tool-row">
+      <div class="tool-media">
+        <span class="pagemark">Actual page · Appendix C</span>
+        <figure class="pageframe"><picture><source srcset="assets/img/page-card.webp" type="image/webp"><img src="assets/img/page-card.jpg" width="800" height="1131" alt="Appendix C, the one-page card: crisis lines by country, five key numbers and three sentences to keep ready" loading="lazy"></picture></figure>
+      </div>
+      <div class="tool-copy">
+        <div class="tag">Appendix C · The one-page card</div>
+        <h3>The page to keep where you can find it at 11 p.m.</h3>
+        <p>Emergency and crisis lines for six regions, your five key financial numbers, three sentences to keep ready, and the one date that matters: your next review. Print it or photograph it — the rest of the book is the method; this is the part you reach for on a bad night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU'LL HAVE ================= -->
+<section class="tint">
+  <div class="wrap wrap--narrow" style="max-width:960px">
+    <div class="kicker">What changes</div>
+    <h2>Whatever you decide, you'll decide it on purpose.</h2>
+    <div class="have">
+      <div class="have-card">
+        <h3>Tonight</h3>
+        <ul>
+          <li>One named problem instead of a fog of dread</li>
+          <li>One small action you can actually finish</li>
+          <li>Permission to stop for the night — the decision gets an appointment, not a deadline of “now”</li>
+          <li>A ten-minute landing: water, food, a quieter hour, the phone face down</li>
+          <li>The resignation email stays a private draft — information kept, decision not sent</li>
+        </ul>
+      </div>
+      <div class="have-card have-card--later">
+        <h3>In 30 days — your case file</h3>
+        <ul>
+          <li>A pressure map with the two problems worth acting on</li>
+          <li>A capacity page with a trade-off a manager can answer</li>
+          <li>A record of what was agreed — and what actually happened</li>
+          <li>A repair test with conditions and a review date</li>
+          <li>Five financial numbers on one page</li>
+          <li>A chosen next step, a fallback, and the next review date</li>
+        </ul>
+      </div>
+    </div>
+    <p class="have-close">That's not a mood. That's evidence. Some people finish this guide and <strong>stay</strong> — because the work genuinely changed. Some <strong>leave</strong> — because the evidence said so. Both are good outcomes. The bad outcome is another year of deciding at 1 a.m.</p>
+  </div>
+</section>
+
+
+
+
+<!-- ================= WHO IT'S FOR ================= -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Is this for you?</div>
+    <h2>Written for one very specific person. It works best if that's you.</h2>
+    <div class="fit">
+      <div class="fit-card fit-card--yes">
+        <h3><span class="dot">✓</span>This guide is for you if…</h3>
+        <ul>
+          <li>You're employed and exhausted — overloaded, trapped, or quietly rehearsing a resignation.</li>
+          <li>You're unsure whether to stay, ask for changes, transfer, search, or leave — and tired of people choosing for you.</li>
+          <li>You want to make a financially and personally responsible decision, not an emotional escape.</li>
+          <li>You can act in small steps, even on low-energy days.</li>
+          <li>You're anywhere in the world — the guide is a global edition, with country checks for the US, UK, EU, Australia and India.</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-card--no">
+        <h3><span class="dot">✕</span>It's probably not for you if…</h3>
+        <ul>
+          <li>You want someone to hand you a definitive verdict on quitting. That's not a book; that's a decision only you can make.</li>
+          <li>You need legal advice on a live dispute or your employment rights — get a qualified adviser.</li>
+          <li>You're looking for a rant about toxic workplaces. This one is calm on purpose.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fit-note">A note on professional care: this guide does not replace medical or mental-health care. If you need care, use it alongside appropriate professional support — not instead of it.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="tint" id="faq">
+  <div class="wrap wrap--narrow">
+    <div class="kicker">Straight answers</div>
+    <h2>The questions you're already asking.</h2>
+    <div class="acc">
+      <details>
+        <summary>“What if I already know I want to quit?”</summary>
+        <div class="a">Then use the guide to plan the exit instead of improvising it: the runway page, the facts to verify before giving notice, resignation wording, counteroffer checks, and a first-week-after plan. Knowing you want to leave is when a <em>responsible</em> exit becomes possible — not when planning stops.</div>
+      </details>
+      <details>
+        <summary>“What if I can't afford to resign?”</summary>
+        <div class="a">That's exactly why the financial runway and the staged decision process exist. You may find you can't afford to quit <em>yet</em> — and, more usefully, what would have to change: the shortfall, the timing, the interim income, the review threshold. Vague money fear paralyzes; numbers can be planned around.</div>
+      </details>
+      <details>
+        <summary>“What if the problem is my manager, not my career?”</summary>
+        <div class="a">The guide separates problems at different levels — tasks, manager, team capacity, company-wide expectations, a temporary peak, or genuine work fit — because each has a different fix. The pressure map and the repair test tell them apart with evidence, so you don't quit a career over one manager, or stay for a company that wouldn't do the same for you.</div>
+      </details>
+      <details>
+        <summary>“I barely have energy to read a book.”</summary>
+        <div class="a">It's built for that state. The shortest route is three steps: the safety page, a two-minute three-line note, and one script. Every substantial worksheet has a deliberately smaller version. One page tonight; the rest when you have more energy.</div>
+      </details>
+      <details>
+        <summary>“Will this tell me whether to quit?”</summary>
+        <div class="a">No — and that's the point. A book that told you to quit would be guessing about your savings, your health, your contract and your household. This guide helps you obtain the information a decision this size deserves, then <em>you</em> make the call — with evidence, a fallback and a review date.</div>
+      </details>
+      <details>
+        <summary>“Is this therapy, medical or legal advice?”</summary>
+        <div class="a">No. It's an educational guide to workplace decisions — not diagnosis, treatment, or individual medical, legal or financial advice. Where health or safety matters, it directs you to professional support, with crisis lines for six regions and a note you can bring to a doctor's appointment if words are difficult.</div>
+      </details>
+      <details>
+        <summary>“What if my workplace is genuinely unsafe or abusive?”</summary>
+        <div class="a">Then you are not required to run a “repair experiment” — the guide says so explicitly. Where safety, severe symptoms or retaliation are concerns, it prioritizes support routes, escalation and accurate documentation over scripts. A decision guide can't fix a dangerous workplace; it can help you stop doubting what you're seeing and act sooner.</div>
+      </details>
+      <details>
+        <summary>“What exactly do I get?”</summary>
+        <div class="a">A 64-page PDF (A4), delivered immediately after checkout: 12 chapters, 11 worksheets, 11 scripts, three appendices and the one-page card. Read it on any device; print and copy the worksheets for your own personal use. It's a global edition — examples from Chicago to Chennai, worksheets that work in any currency, and country checks for the US, UK, EU, Australia and India.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUE STACK + PRICE ================= -->
+<section id="get">
+  <div class="wrap">
+    <div class="kicker">Everything included</div>
+    <h2>One guide. Every tool the decision needs.</h2>
+    <div class="value">
+      <div class="stack">
+        <h3>The core method</h3>
+        <ul>
+          <li>64-page guide in three parts: reduce pressure → change what happens at work → make the next career decision</li>
+          <li>12 chapters, each ending in one concrete “next action”</li>
+          <li>A reading map for low-energy days — plus the shortest route (three steps, tonight)</li>
+        </ul>
+        <h3>The 11 worksheets</h3>
+        <ul>
+          <li>Three-line note · Pressure map · Capacity page · Conversation card · Finishable handover · Repair agreement · Path comparison · Runway page · 30-day plan · Decision record · Early-warning card</li>
+          <li>Every worksheet has a deliberately smaller version for hard days</li>
+        </ul>
+        <h3>The 11 workplace scripts</h3>
+        <ul>
+          <li>Competing priorities, “everything is urgent,” late-night messages, weekend work, guilt trips and more</li>
+          <li>Lower-risk alternatives where appropriate, plus a “before you send” checklist</li>
+        </ul>
+        <h3>Decision tools</h3>
+        <ul>
+          <li>The Stay / Change / Leave decision dashboard</li>
+          <li>The interview evidence bank — questions that reveal the real job, and what strong answers sound like</li>
+          <li>Next-role brief, resignation wording, counteroffer checks, country rules checklist (US, UK, EU, Australia, India)</li>
+        </ul>
+        <h3>Support</h3>
+        <ul>
+          <li>The one-page card: crisis lines by country, your five numbers, three sentences to keep ready</li>
+          <li>An appointment note to bring to a doctor if words are difficult</li>
+          <li>Health information drawn from official sources (WHO, NHS), fully referenced</li>
+        </ul>
+      </div>
+      <div class="pricebox">
+        <div class="k">Instant PDF download</div>
+        <div class="big price-inline">$9.99</div>
+        <div class="cur currency-inline">USD · one-time payment</div>
+        <a class="btn btn--primary buy" href="https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX">Get Before You Resign <span class="nw">— <span class="price-inline">$9.99</span></span></a>
+        <a class="link-preview link-preview--ink preview-link" href="assets/preview.pdf">or see inside the guide first (6-page PDF)</a>
+        <ul class="perks">
+          <li>64-page PDF (A4) — phone, tablet, desktop</li>
+          <li>Print the worksheets when you want to write things out</li>
+          <li>Reuse them as often as you like — personal-use license</li>
+          <li>Global edition, works in any currency</li>
+        </ul>
+        <p class="buy-note buy-note--center">One-time payment. The complete guide — every chapter, worksheet and script — from page 1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUTHOR ================= -->
+<section class="tint">
+  <div class="wrap">
+    <div class="kicker">Why this guide exists</div>
+    <div class="author">
+      <div class="mono" aria-hidden="true">AS</div>
+      <div>
+        <h2 style="font-size:26px">Aijaz Siddique</h2>
+        <p class="lede">Aijaz Siddique created <em>Before You Resign</em> as a practical decision guide for the point where workplace pressure and career decisions collide — the late evenings when the resignation email feels inevitable and the facts are nowhere in the room.</p>
+        <p>The guide draws its health and safety information from official sources — including the World Health Organization and the NHS — with every reference listed in the book. It makes no clinical claims and claims no professional credentials; it says so in its first pages. The workplace examples inside are clearly labelled fictional composites, written to illustrate decisions — not testimonials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="dark final">
+  <div class="wrap">
+    <p class="brand-line">“You do not have to solve your entire career tonight.”</p>
+    <p class="sub">But you can make tonight smaller — and give the next 30 days a method. Pressure map, scripts, repair test, runway, decision dashboard. One guide.</p>
+    <div class="hero-cta-row">
+      <a class="btn btn--primary buy" href="https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX">Get Before You Resign <span class="nw">— <span class="price-inline">$9.99</span></span></a>
+      <a class="link-preview preview-link" href="assets/preview.pdf">or see inside the guide first</a>
+    </div>
+    <p class="safety">If you are in crisis or cannot stay safe, please skip all of this and contact your local emergency number, or find a helpline in your country at <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a>. The career decision can wait. You matter more.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Before You Resign</h4>
+        <p>A 30-day action guide to reduce work pressure, set boundaries and decide what comes next. Global edition by Aijaz Siddique.</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>In crisis? Call your local emergency number, or find a helpline at <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a>. This page and the guide are not crisis services.</p>
+      </div>
+      <div>
+        <h4>The guide</h4>
+        <p>64-page PDF · 11 worksheets · 11 scripts · 30-day plan · decision dashboard. Instant download after checkout.</p>
+      </div>
+    </div>
+    <div class="fine">
+      <p><em>Before You Resign</em> is an educational guide to workplace decisions. It does not diagnose, treat or cure burnout or any health condition, and it is not individual medical, psychological, legal, employment-law or financial advice. Its decision tools are practical prompts, not validated assessments. Workplace examples are fictional composites. Employment arrangements differ by employer, contract, occupation and location — check the policies that apply to you and seek qualified advice when health, employment rights or significant money are involved.</p>
+      <p>© 2026 Aijaz Siddique. All rights reserved.</p>
+      <p class="legal-nav"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= STICKY MOBILE BAR ================= -->
+<div class="mobbar" id="mobbar" hidden>
+  <div class="in">
+    <div class="t">Before You Resign<span class="p price-inline">$9.99</span></div>
+    <a class="btn btn--primary buy" href="https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX">Get the guide</a>
+  </div>
+</div>
+
+<script>
+/* ==========================================================
+   PRODUCT CONFIG — edit these values only.
+   All price text and all purchase links on the page are
+   controlled from here. Keep the static HTML price ($9.99)
+   in sync if you change it, so the page is correct even
+   before JavaScript runs.
+   ========================================================== */
+var PRODUCT_CONFIG = {
+  price: "9.99",                 // e.g. "9.99", "499", "12.50"
+  currency: "USD",               // ISO code shown next to the price
+  currencySymbol: "$",           // symbol shown before the amount
+  checkoutUrl: "https://buy.polar.sh/polar_cl_N2LbWeYXHThl6twRPkm8EZFRpFvQ1XY3CoQPg1zgxgX",  // Polar.sh checkout — opens in same tab
+  // "See inside the guide" links. Points at the included 6-page
+  // preview PDF (assets/preview.pdf). Replace with an external URL if
+  // you host the preview elsewhere.
+  previewUrl: "assets/preview.pdf"
+};
+
+(function () {
+  var priceEls = document.querySelectorAll(".price-inline");
+  var curEls = document.querySelectorAll(".currency-inline");
+  var buyEls = document.querySelectorAll(".buy");
+  var i;
+  for (i = 0; i < priceEls.length; i++) {
+    priceEls[i].textContent = PRODUCT_CONFIG.currencySymbol + PRODUCT_CONFIG.price;
+  }
+  for (i = 0; i < curEls.length; i++) {
+    curEls[i].textContent = PRODUCT_CONFIG.currency + " · one-time payment";
+  }
+  for (i = 0; i < buyEls.length; i++) {
+    buyEls[i].href = PRODUCT_CONFIG.checkoutUrl;
+  }
+  var prevEls = document.querySelectorAll(".preview-link");
+  for (i = 0; i < prevEls.length; i++) {
+    prevEls[i].href = PRODUCT_CONFIG.previewUrl;
+    prevEls[i].target = "_blank";
+    prevEls[i].rel = "noopener";
+  }
+  // keep structured-data price/currency in sync with the config
+  var ldj = document.getElementById("ldj-product");
+  if (ldj) {
+    try {
+      var d = JSON.parse(ldj.textContent);
+      if (d.offers) { d.offers.price = PRODUCT_CONFIG.price; d.offers.priceCurrency = PRODUCT_CONFIG.currency; }
+      ldj.textContent = JSON.stringify(d, null, 2);
+    } catch (e) {}
+  }
+
+  // Sticky mobile bar: appears once the hero is scrolled past.
+  var bar = document.getElementById("mobbar");
+  var hero = document.querySelector(".hero");
+  var mq = window.matchMedia("(max-width: 880px)");
+  if ("IntersectionObserver" in window && bar && hero) {
+    var io = new IntersectionObserver(function (entries) {
+      bar.hidden = !(mq.matches && !entries[0].isIntersecting);
+    }, { rootMargin: "-80px 0px 0px 0px" });
+    io.observe(hero);
+  }
+})();
+</script>
+</body>
+</html>

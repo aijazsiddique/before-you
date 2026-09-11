@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;box-sizing:border-box}
+body{width:1200px;height:630px;overflow:hidden;background:
+ radial-gradient(560px 560px at 88% 108%,rgba(14,90,85,.55),transparent 65%),
+ radial-gradient(420px 420px at 72% -18%,rgba(200,155,76,.16),transparent 60%),#072B28;}
+.ring{position:absolute;border:1.5px solid rgba(200,155,76,.30);border-radius:50%}
+.r1{width:520px;height:520px;right:-130px;top:120px}
+.r2{width:520px;height:520px;right:-40px;top:230px;opacity:.6}
+.r3{width:380px;height:380px;left:-140px;bottom:-190px;border-color:rgba(244,239,226,.10)}
+.wrap{position:relative;display:flex;height:100%;align-items:center;padding:0 64px;gap:56px}
+.left{flex:1}
+.kick{font:800 15px/1 Inter;letter-spacing:.42em;color:#C89B4C;margin-bottom:22px}
+h1{font:600 84px/1.02 Fraunces;color:#F6F1E4;margin-bottom:26px}
+.bar{width:96px;height:5px;background:#BC5533;margin-bottom:26px}
+.sub{font:italic 400 25px/1.45 Fraunces;color:#D9D2BF;max-width:520px}
+.brand{margin-top:34px;font:italic 400 19px/1.4 Fraunces;color:#CBC4AE}
+.book{flex:none;position:relative;margin-right:8px}
+.book img{width:296px;display:block;border-radius:6px;box-shadow:-22px 30px 60px rgba(0,0,0,.45)}
+.book::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border:1.5px solid rgba(200,155,76,.45);border-radius:6px;z-index:-1}
+.badge{position:absolute;top:-14px;right:-24px;background:#BC5533;color:#FBF3EE;font:800 12.5px/1 Inter;letter-spacing:.16em;padding:11px 16px;border-radius:999px}
+</style></head>
+<body>
+<div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+<div class="wrap">
+ <div class="left">
+  <div class="kick">A 30-DAY ACTION GUIDE</div>
+  <h1>Before You<br>Resign</h1>
+  <div class="bar"></div>
+  <div class="sub">Reduce work pressure, set boundaries and decide what comes next — with worksheets, scripts and a plan you can start tonight.</div>
+  <div class="brand">&ldquo;You do not have to solve your entire career tonight.&rdquo;</div>
+ </div>
+ <div class="book"><img src="img/page-cover.jpg"><div class="badge">11 WORKSHEETS &middot; 11 SCRIPTS</div></div>
+</div>
+</body></html>
