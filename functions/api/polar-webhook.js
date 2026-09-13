@@ -91,14 +91,17 @@ async function verifyStandardWebhooks(request, rawBody, secret) {
   }
 
   const expected = bytesToB64(await hmacSha256(keyBytes, id + "." + ts + "." + rawBody));
-  return sigHeader.split(",").some((entry) => {
-    const trimmed = entry.trim();
-    const eq = trimmed.indexOf("=");
-    if (eq < 0) return false;
-    const version = trimmed.slice(0, eq);
-    const sig = trimmed.slice(eq + 1);
-    return version === "v1" && timingSafeEqual(new TextEncoder().encode(sig), new TextEncoder().encode(expected));
-  });
+  // Standard Webhooks signature header format: "v1,<sig>" (possibly several
+  // comma-separated "v1,<sig>" pairs) — version and signature alternate,
+  // separated by commas; there is no "=" between version and signature.
+  const parts = sigHeader.split(",").map((p) => p.trim());
+  for (let i = 0; i + 1 < parts.length; i++) {
+    if (parts[i] !== "v1") continue;
+    if (timingSafeEqual(new TextEncoder().encode(parts[i + 1]), new TextEncoder().encode(expected))) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /** Legacy Polar HMAC verification (older secrets). */
