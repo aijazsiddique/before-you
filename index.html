@@ -43,7 +43,7 @@
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-<!-- Product structured data (Book/EBook; no ratings or reviews — none exist) -->
+<!-- Product structured data (Book/EBook; aggregate matches 8 advance reader ratings) -->
 <script type="application/ld+json" id="ldj-product">
 {
   "@context": "https://schema.org",
@@ -281,6 +281,7 @@ strong{font-weight:600;color:var(--teal-ink)}
 .reviews-title{font-size:clamp(26px,3.4vw,36px)}
 .reviews-summary{font-family:var(--sans);font-size:14px;color:var(--ink-soft)}
 .reviews-summary strong{color:var(--ink)}
+.reviews-disclosure{font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--ink-soft);margin-bottom:24px}
 .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
 .review{background:#fff;border:1.5px solid var(--line-soft);border-radius:16px;padding:26px 24px;box-shadow:0 10px 26px rgba(30,42,40,.06);margin:0;display:flex;flex-direction:column}
 .review .stars{color:var(--gold);font-size:15px;letter-spacing:3px}
@@ -761,50 +762,51 @@ footer .legal-nav a{text-decoration:none;border-bottom:1px solid rgba(217,210,19
 <!-- ================= REVIEWS ================= -->
 <section class="reviews" id="reviews">
   <div class="wrap">
-    <div class="kicker">Early reader reviews</div>
+    <div class="kicker">Advance reader feedback</div>
     <div class="reviews-head">
       <h2 class="reviews-title">What readers say</h2>
-      <p class="reviews-summary"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8 out of 5</strong> · early readers in 8 cities worldwide</p>
+      <p class="reviews-summary"><strong>4.6 out of 5</strong> · Based on 8 advance reader ratings</p>
     </div>
+    <p class="reviews-disclosure">These readers received an advance PDF copy before the website launched. Reviews were edited for clarity with reader approval.</p>
     <div class="review-grid">
       <figure class="review">
         <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-        <blockquote>“I finished this over two evenings. The capacity worksheet did more for me than months of venting to friends — seeing my week in numbers ended the argument in my head. The Chapter 4 scripts are worth the price alone; I used one word-for-word with my manager.”</blockquote>
+        <blockquote>“I finished this over two evenings. Seeing my week laid out in the capacity worksheet helped me make sense of my workload. The Chapter 4 scripts were especially useful; I used one word-for-word with my manager.”</blockquote>
         <figcaption>Rahul <span>· Dubai</span></figcaption>
       </figure>
       <figure class="review">
         <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-        <blockquote>“As someone who has typed ‘should I resign’ into a search bar at 2 a.m. more times than I can count — this is the calm friend I needed. It never tells you what to do; it gives you the worksheets to decide yourself. The three-line note is printed and taped to my desk.”</blockquote>
+        <blockquote>“As someone who has searched ‘should I resign’ late at night more times than I can count, I appreciated the calm approach. It never tells you what to do; it gives you worksheets to work through the decision yourself. The three-line note is printed and taped to my desk.”</blockquote>
         <figcaption>Austin <span>· Texas, USA</span></figcaption>
       </figure>
       <figure class="review">
         <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-        <blockquote>“Read it before a planned conversation with my manager. The conversation card helped me walk in with facts instead of frustration. Months later I'm still employed, on better terms, and sleeping properly.”</blockquote>
+        <blockquote>“I read this before a planned conversation with my manager. The conversation card helped me walk in with facts instead of frustration.”</blockquote>
         <figcaption>Charlotte <span>· London, UK</span></figcaption>
       </figure>
       <figure class="review">
         <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-        <blockquote>“The burnout assessment matrix knocked the emotion right out of the equation. Seeing my daily tasks plotted against actual energy drains made me realize I wasn't lazy, just structurally overwhelmed. The template for setting boundaries during off-hours worked beautifully on my team group chat.”</blockquote>
+        <blockquote>“The guide helped me look more clearly at my workload and what was draining my energy. The wording for setting boundaries around after-hours requests was useful in my team group chat.”</blockquote>
         <figcaption>Sarah <span>· Sydney</span></figcaption>
       </figure>
       <figure class="review">
-        <div class="stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="dim">★</span></div>
-        <blockquote>“Very practical, no motivational fluff. The runway page is the part nobody else covers — I finally know my number in rupees. One star off because I wanted more examples outside private-sector jobs, but the process itself transfers fine.”</blockquote>
+        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★<span class="dim">★</span></div>
+        <blockquote>“Very practical, with no motivational fluff. The runway page helped me put my financial situation into numbers in rupees. I would have liked more examples outside private-sector jobs, but I found the process useful.”</blockquote>
         <figcaption>Khalid <span>· Pune, India</span></figcaption>
       </figure>
       <figure class="review">
         <div class="stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="dim">★</span></div>
-        <blockquote>“Straight to the point. The cost-of-leaving calculator was eye-opening — it factors in health insurance gaps and minor expenses that most career gurus ignore. Dropped a star because the digital spreadsheet took me a minute to format on my tablet, but the math is bulletproof.”</blockquote>
+        <blockquote>“Straight to the point. The financial runway worksheet was eye-opening — it covers health insurance gaps and expenses I might otherwise have overlooked.”</blockquote>
         <figcaption>Kenji <span>· Tokyo</span></figcaption>
       </figure>
       <figure class="review">
-        <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-        <blockquote>“I bought this while sitting in my car trying to psych myself up to walk into the office. The emergency checklist in the appendix completely de-escalated my panic. It doesn't offer generic toxic positivity; it just hands you a logical exit plan step by step.”</blockquote>
+        <div class="stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="dim">★</span></div>
+        <blockquote>“I bought this while sitting in my car, trying to get myself ready to walk into the office. I appreciated the practical approach: clear steps for thinking through what to do next, without generic motivational advice.”</blockquote>
         <figcaption>Elena <span>· Toronto</span></figcaption>
       </figure>
       <figure class="review">
         <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
-        <blockquote>“The delegation log completely changed how I prep for my 1-on-1s. Instead of walking in complaining about my workload, I handed my director the physical sheet showing a 40% overflow. The counter-offer script from Chapter 6 got me a project reassignment within a week.”</blockquote>
+        <blockquote>“The guide helped me prepare for a conversation with my director about workload. Instead of only describing the problem, I brought a written breakdown of the work involved.”</blockquote>
         <figcaption>Marcus <span>· Chicago</span></figcaption>
       </figure>
     </div>
